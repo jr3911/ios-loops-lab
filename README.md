@@ -249,9 +249,9 @@ repeat {
     i += 1
 } while i <= 10
 
-// while loop performs the actions in the block while the condition is true
-// repeat-while loop performs the actions in the block until the condition is false
-// outputs will still be the same because the end condition for both is when i > 10
+// while loop performs the actions in the block while the condition is true (checks condition first before performing block)
+// repeat-while loop performs the actions in the block until the condition is false (runs block first before checking condition)
+// outputs will still be the same because the end condition is reach for both when i > 10
 // both perform the actions until i becomes 11
 
 ```
@@ -311,12 +311,12 @@ for i in 1...10 {
 }
 ```
 
-[]1
-[]2
-[]3
-[]8
-[]9
-[]10
+1
+2
+3
+8
+9
+10
 
 ***
 ## Question 18
@@ -332,9 +332,9 @@ for i in 1...10 {
 }
 ```
 
-[]1
-[]2
-[]3
+1
+2
+3
 
 ***
 ## Question 19
@@ -352,7 +352,9 @@ outerloop: for x in 1...3 {
 }
 ```
 "x = 1, y = 1"
+
 "x = 2, y = 1"
+
 "x = 3, y = 1"
 
 ***
@@ -376,7 +378,7 @@ Write code that prints out all the points in the area bounded by (0,0), (10,0), 
 ```
 for x in 0...10 {
     for y in 0...10 {
-        if x - y >= 5 || y - x >= 5{
+        if x - y >= 5 || y - x >= 5 {
             print("(\(x),\(y))", separator: "", terminator: "  ")
         }
     }
@@ -438,10 +440,10 @@ You can use print("") to print an empty line.
 ```
 var N: Int = 5
 var segment: String = ""
-var starsPerLine = 1
+var starsPerLine = 0
 
-for line in 1...N {
-    while starsPerLine <= N {
+for line in 0..<N {
+    while starsPerLine < N {
         segment += "*"
         starsPerLine += 1
     }
