@@ -14,6 +14,7 @@
 
 Write code that prints all the numbers from 1 to 150, **inclusive.**
 
+```
 var numList = [Int] ()
 
 for index in 1...150 {
@@ -21,11 +22,13 @@ for index in 1...150 {
 }
 print(numList)
 
+```
 ***
 ## Question 2
 
 Write code that prints all the numbers from 142 to 159, **exclusive.**
 
+```
 var exclusiveNumList = [Int] ()
 for i in 142 ..< 159 {
     exclusiveNumList.append(i)
@@ -33,11 +36,14 @@ for i in 142 ..< 159 {
 exclusiveNumList = Array(exclusiveNumList.dropFirst(1))
 print(exclusiveNumList)
 
+```
+
 ***
 ## Question 3
 
 Write code that prints only the even numbers from 15 to 80, **inclusive.**
 
+```
 var evenNumList = [Int] ()
 for e in 15...80 {
     if e % 2 == 0 {
@@ -46,11 +52,14 @@ for e in 15...80 {
 }
 print(evenNumList)
 
+```
+
 ***
 ## Question 4
 
 Write code that prints only the odd numbers from 19 to 51, **inclusive.**
 
+```
 var oddNumList = [Int] ()
 for o in 19...51 {
     if o % 2 != 0 {
@@ -58,12 +67,14 @@ for o in 19...51 {
     }
 }
 print(oddNumList)
+```
 
 ***
 ## Question 5
 
 Write code that prints all the numbers that end in a **5** from 1 to 100, **exclusive.**
 
+```
 var endsInFive = [Int] ()
 for five in 1...100 {
     if five % 5 == 0 && five % 10 != 0 {
@@ -72,12 +83,14 @@ for five in 1...100 {
 }
 endsInFive = Array(endsInFive.dropFirst(1))
 print(endsInFive)
+```
 
 ***
 ## Question 6
 
 Write code that prints all the numbers that end in a 7 from 1 to 40, **inclusive.**
 
+```
 var endsInSeven = [Int] ()
 for seven in 1...40 {
     if seven % 7 == 0 {
@@ -85,6 +98,7 @@ for seven in 1...40 {
     }
 }
 print(endsInSeven)
+```
 
 ***
 ## Question 7
@@ -93,6 +107,7 @@ Given a range of numbers from 20 to 150 inclusive, print out all the numbers tha
 
 `Numbers that are divisible by 3`
 
+```
 var divisibleByThree = [Int] ()
 for threeMultiple in 20...150 {
     if threeMultiple % 3 == 0 {
@@ -100,6 +115,7 @@ for threeMultiple in 20...150 {
     }
 }
 print(divisibleByThree)
+```
 
 ***
 ## Question 8
@@ -108,7 +124,7 @@ Given a range of numbers from 20 to 150 inclusive, print out all the numbers tha
 
 `Numbers that are divisible by 2 and 3`
 
-
+```
 var multipleOfTwoThree = [Int] ()
 for divByTwoThree in 20...150 {
     if divByTwoThree % 2 == 0 && divByTwoThree % 3 == 0 {
@@ -116,7 +132,7 @@ for divByTwoThree in 20...150 {
     }
 }
 print(multipleOfTwoThree)
-
+```
 ***
 ## Question 9
 
@@ -124,6 +140,7 @@ Given a range of numbers from 20 to 150 inclusive, print out all the numbers tha
 
 `Numbers that end with a 4`
 
+```
 var endsWithFour = [Int] ()
 for four in 20...150 {
     if four % 10 == 4 {
@@ -131,7 +148,7 @@ for four in 20...150 {
     }
 }
 print(endsWithFour)
-
+```
 ***
 ## Question 10
 
@@ -139,6 +156,7 @@ Given a range of numbers from 20 to 150, print out all the numbers that follows 
 
 `Print out numbers: 31, 35, 40 to 60.`
 
+```
 var specificNums = [Int] ()
 for c in 20...150 {
     switch c {    
@@ -149,6 +167,7 @@ for c in 20...150 {
     }
 }
 print(specificNums)
+```
 
 ***
 ## Question 11
@@ -242,10 +261,40 @@ repeat {
 
 What's the difference between `break` and `continue`?  Give an example that demonstrates their differences.
 
-// break exits out of the entire control flow statement
-// continue stops the actions of block for the current interation and resumes for the next iteration
+// break exits out of the entire control flow statement / loop statement
+// continue stops the actions of the block for the current interation and resumes for the next applicable iteration
 // Ex. continue for when you want to skip the next actions in the block but continue the beginning of the loop with the next iteration
+
+            ```            
+            var word: String = "lolololol"
+            var newWord: String = ""
+            var excludeChar: Character = "o"
+            
+            for letter in word {
+                if letter == excludeChar {
+                    continue
+                }
+                newWord.append(letter)
+            }
+            print(newWord)
+            // prints "lllll"
+            ```
 // Ex. break when you do not want to do the loop anymore for any more iterations
+
+            ```            
+            var word: String = "lolololol"
+            var newWord: String = ""
+            var excludeChar: Character = "o"
+
+            for letter in word {
+                if letter == excludeChar {
+                    break
+                }
+                newWord.append(letter)
+            }
+            print(newWord)
+            // prints "l"
+            ```
 
 
 ***
@@ -311,18 +360,20 @@ outerloop: for x in 1...3 {
 
 Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) **where** x and y are both integers.
 
+```
 for x in 0...10 {
     for y in 0...10 {
         print("(\(x),\(y))", separator: "", terminator: "  ")
     }
     print("")
 }
+```
 
 ***
 ## Question 21
 
 Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) **where** the difference of x and y is at least 5, and x and y are both integers.
-
+```
 for x in 0...10 {
     for y in 0...10 {
         if x - y >= 5 || y - x >= 5{
@@ -330,7 +381,7 @@ for x in 0...10 {
         }
     }
 }
-
+```
 ***
 ## Question 22
 
@@ -347,11 +398,12 @@ Output:
 16
 25
 ```
+```
 var N: Int = 1
 for root in 1...N {
     print(root * root)
 }
-
+```
 ***
 ## Question 23
 
@@ -383,6 +435,7 @@ Hint 2
 You can use print("") to print an empty line.
 
 ***
+```
 var N: Int = 5
 var segment: String = ""
 var starsPerLine = 1
@@ -394,4 +447,4 @@ for line in 1...M{
     }
     print(segment)
 }
-
+```
