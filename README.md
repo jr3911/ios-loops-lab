@@ -440,8 +440,8 @@ var N: Int = 5
 var segment: String = ""
 var starsPerLine = 1
 
-for line in 1...M{
-    while starsPerLine <= M {
+for line in 1...N {
+    while starsPerLine <= N {
         segment += "*"
         starsPerLine += 1
     }
